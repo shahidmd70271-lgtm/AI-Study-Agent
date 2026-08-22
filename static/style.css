@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,13 +11,17 @@ body {
     color: white;
 }
 
+/* Main container */
 .container {
     width: 90%;
     max-width: 1000px;
     margin: auto;
     padding: 40px 20px;
+
+    animation: fadeUp 0.8s ease both;
 }
 
+/* Header */
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -27,13 +30,18 @@ header {
 header h1 {
     font-size: 42px;
     margin-bottom: 10px;
+
+    animation: bigGlow 2s ease-in-out infinite alternate;
 }
 
 header p {
     color: #a5b4fc;
     font-size: 18px;
+
+    animation: fadeUp 1s ease both;
 }
 
+/* Chat box */
 .chat-box {
     height: 450px;
     background: rgba(255, 255, 255, 0.06);
@@ -42,14 +50,19 @@ header p {
     padding: 25px;
     overflow-y: auto;
     margin-bottom: 20px;
+
+    animation: slideIn 0.7s ease both;
 }
 
+/* Messages */
 .message {
     max-width: 75%;
     padding: 15px;
     border-radius: 15px;
     margin-bottom: 15px;
     line-height: 1.5;
+
+    animation: messagePop 0.3s ease both;
 }
 
 .ai {
@@ -61,6 +74,7 @@ header p {
     margin-left: auto;
 }
 
+/* Input area */
 .input-area {
     display: flex;
     gap: 10px;
@@ -73,8 +87,16 @@ header p {
     border: none;
     outline: none;
     font-size: 16px;
+
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+.input-area input:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Send button */
 .input-area button {
     padding: 16px 25px;
     border: none;
@@ -83,12 +105,24 @@ header p {
     color: white;
     font-weight: bold;
     cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .input-area button:hover {
     background: #818cf8;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
 }
 
+.input-area button:active {
+    transform: scale(0.97);
+}
+
+/* Feature buttons */
 .features {
     display: flex;
     gap: 15px;
@@ -103,8 +137,129 @@ header p {
     background: #111827;
     color: white;
     cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .features button:hover {
     background: #1f2937;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.features button:active {
+    transform: scale(0.97);
+}
+
+/* Fade animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat box animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Message animation */
+@keyframes messagePop {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Heading glow */
+@keyframes bigGlow {
+    from {
+        color: white;
+        transform: scale(1);
+        text-shadow: 0 0 5px #6366f1;
+    }
+
+    to {
+        color: #a5b4fc;
+        transform: scale(1.04);
+        text-shadow: 0 0 30px #818cf8;
+    }
+}
+
+/* Smooth scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #818cf8;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 25px 10px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .chat-box {
+        height: 400px;
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    .input-area button {
+        width: 100%;
+    }
+
+    .features {
+        flex-direction: column;
+    }
 }
