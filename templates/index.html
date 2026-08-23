@@ -554,8 +554,18 @@
     <script
         src="{{ url_for('static', filename='script.js') }}"
     ></script>
+    
+ <!-- PAGE LOADER -->
+    <div id="page-loader">
+        <div class="loader-orb">AI</div>
+        <div class="loader-text">INITIALIZING AI CORE...</div>
+    </div>
 
+    <script>
+        window.addEventListener("load", function () {
+            document.body.classList.add("loaded");
+        });
+    </script>
 
 </body>
-
 </html>
