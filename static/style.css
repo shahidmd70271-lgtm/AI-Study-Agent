@@ -2581,3 +2581,171 @@ body.loaded #page-loader {
     visibility: hidden;
     pointer-events: none;
 }
+/* =====================================================
+   MOBILE PERFORMANCE MODE
+   Keeps the futuristic look but removes lag/jitter
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* Stop expensive title animation */
+    header h1 {
+        animation: none !important;
+        transform: none !important;
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.5) !important;
+    }
+
+    /* Disable expensive background animations */
+    .particles,
+    .grid,
+    .mouse-glow {
+        animation: none !important;
+    }
+
+    /* Hide mouse-follow effect on touch devices */
+    .mouse-glow {
+        display: none !important;
+    }
+
+    /* Reduce orb animation */
+    .ai-orb {
+        animation: none !important;
+    }
+
+    .orb-ring {
+        animation: none !important;
+    }
+
+    /* Keep only simple entrance animation */
+    .container {
+        animation: fadeUp 0.5s ease both !important;
+    }
+
+    .chat-box {
+        animation: none !important;
+    }
+
+    .message {
+        animation: messagePop 0.2s ease both !important;
+    }
+
+    /* Remove expensive button hover effects on mobile */
+    .input-area button,
+    .features button {
+        transition: background 0.15s ease !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .input-area button:hover,
+    .features button:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Prevent text rendering jitter */
+    body {
+        overflow-x: hidden;
+    }
+
+    header h1,
+    header p,
+    .message,
+    .feature-button {
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Make loading screen lightweight */
+    #page-loader {
+        animation: none !important;
+    }
+
+    .loader-orb {
+        animation: loaderPulse 1.8s ease-in-out infinite !important;
+    }
+
+    .loader-text {
+        animation: none !important;
+    }
+}
+/* =====================================================
+   MOBILE = PERFORMANCE MODE
+   DESKTOP = FULL ANIMATIONS
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* No horizontal scrolling */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    /* Disable ALL animations on mobile */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Disable background effects */
+    .particles,
+    .grid,
+    .mouse-glow {
+        display: none !important;
+    }
+
+    /* Static AI orb */
+    .ai-orb,
+    .orb-ring,
+    .orb-core {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    /* Static title */
+    header h1 {
+        animation: none !important;
+        transform: none !important;
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.5) !important;
+    }
+
+    /* Static messages */
+    .message {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    /* Static buttons */
+    .input-area button,
+    .features button {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Static loading screen */
+    #page-loader,
+    #page-loader *,
+    .loader-orb,
+    .loader-text {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Prevent content overflow */
+    .container,
+    .ai-panel,
+    .chat-box,
+    .message,
+    .features {
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+}
