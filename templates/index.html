@@ -1,56 +1,296 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Study Agent</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shahid's AI Study Agent</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 
 <body>
 
+    <!-- =====================================================
+         ANIMATED BACKGROUND
+    ====================================================== -->
+
+    <div class="particles"></div>
+
+    <div class="grid"></div>
+
+    <div class="mouse-glow"></div>
+
+
+    <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
+
     <div class="container">
 
-        <header>
-            <h1>🤖 SHAHID'S AI Study Agent</h1>
-            <p>Your Personal AI Learning Assistant</p>
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="hero">
+
+            <div class="ai-orb">
+
+                <div class="orb-ring ring-1"></div>
+
+                <div class="orb-ring ring-2"></div>
+
+                <div class="orb-ring ring-3"></div>
+
+
+                <div class="orb-core">
+
+                    <span>AI</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+
+            <h1>
+                🤖 SHAHID'S AI STUDY AGENT
+            </h1>
+
+
+            <p>
+                Your Personal AI Learning Assistant
+            </p>
+
         </header>
+
+
+
+        <!-- =================================================
+             MAIN AI INTERFACE
+        ================================================== -->
 
         <main>
 
-            <div class="chat-box" id="chatBox">
-                <div class="message ai">
-                    👋 Hello! I'm your AI Study Agent.<br><br>
-                    Ask me anything about your studies!
-                </div>
-            </div>
+            <section class="ai-panel">
 
-            <div class="input-area">
-                <input
-                    type="text"
-                    id="question"
-                    placeholder="Ask your study question..."
-                    onkeypress="handleKeyPress(event)"
+
+                <!-- PANEL HEADER -->
+
+                <div class="panel-header">
+
+                    <span>
+                        ◉ AI CORE
+                    </span>
+
+                    <span class="system-text">
+                        READY
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CHAT BOX
+                ================================================== -->
+
+                <div
+                    class="chat-box"
+                    id="chatBox"
                 >
 
-                <button onclick="askAI()">Ask AI</button>
-            </div>
+                    <div class="message ai">
 
-            <div class="features">
+                        <div class="message-label">
 
-                <button onclick="studyPlanner()">
-                    📅 Study Planner
-                </button>
+                            🤖 AI STUDY AGENT
 
-                <button onclick="quizGenerator()">
-                    📝 Generate Quiz
-                </button>
+                        </div>
 
-                <button onclick="aiTutor()">
-                    📚 AI Tutor
-                </button>
+
+                        👋 Hello! I'm your AI Study Agent.
+
+                        <br>
+                        <br>
+
+                        Ask me anything about your studies!
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INPUT AREA
+                ================================================== -->
+
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="question"
+                        placeholder="Ask your study question..."
+                        autocomplete="off"
+                        onkeypress="handleKeyPress(event)"
+                    >
+
+
+                    <button
+                        class="ask-button"
+                        onclick="askAI()"
+                    >
+
+                        ⚡ ASK AI
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FEATURE BUTTONS
+                ================================================== -->
+
+                <div class="features">
+
+
+                    <!-- STUDY PLANNER -->
+
+                    <button
+                        class="feature-button planner"
+                        onclick="studyPlanner()"
+                    >
+
+                        <span class="button-icon">
+                            📅
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                Study Planner
+                            </strong>
+
+                            <small>
+                                Create a study schedule
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- QUIZ -->
+
+                    <button
+                        class="feature-button quiz"
+                        onclick="quizGenerator()"
+                    >
+
+                        <span class="button-icon">
+                            📝
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                Generate Quiz
+                            </strong>
+
+                            <small>
+                                Test your knowledge
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- AI TUTOR -->
+
+                    <button
+                        class="feature-button tutor"
+                        onclick="aiTutor()"
+                    >
+
+                        <span class="button-icon">
+                            📚
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                AI Tutor
+                            </strong>
+
+                            <small>
+                                Learn any topic
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SYSTEM INFORMATION
+            ================================================== -->
+
+            <div class="system-info">
+
+
+                <div>
+
+                    <span class="info-dot"></span>
+
+                    GEMINI AI
+
+                </div>
+
+
+                <div>
+
+                    ⚡ REAL-TIME RESPONSE
+
+                </div>
+
+
+                <div>
+
+                    🔒 SECURE
+
+                </div>
+
 
             </div>
 
@@ -58,7 +298,264 @@
 
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+    <!-- =====================================================
+         STUDY PLANNER MODAL
+    ====================================================== -->
+
+    <div
+        id="studyPlannerModal"
+        class="planner-modal"
+    >
+
+        <div class="planner-modal-content">
+
+
+            <button
+                class="planner-close"
+                onclick="closePlanner()"
+            >
+
+                ×
+
+            </button>
+
+
+            <div class="planner-icon">
+
+                📅
+
+            </div>
+
+
+            <div class="planner-title">
+
+                STUDY PLANNER
+
+            </div>
+
+
+            <div class="planner-line"></div>
+
+
+            <p class="planner-subtitle">
+
+                AI STUDY PLANNING CORE
+
+            </p>
+
+
+            <label>
+
+                ENTER YOUR STUDY DETAILS
+
+            </label>
+
+
+            <textarea
+                id="plannerInput"
+                placeholder="Example: I have 5 days, 3 hours per day, and need to study Java, Physics and Maths..."
+            ></textarea>
+
+
+            <button
+                class="planner-generate"
+                onclick="generateStudyPlan()"
+            >
+
+                ⚡ GENERATE AI STUDY PLAN
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         QUIZ TOPIC MODAL
+    ====================================================== -->
+
+    <div
+        id="quizModal"
+        class="planner-modal"
+    >
+
+        <div class="planner-modal-content">
+
+
+            <button
+                class="planner-close"
+                onclick="closeQuiz()"
+            >
+
+                ×
+
+            </button>
+
+
+            <div class="planner-icon">
+
+                📝
+
+            </div>
+
+
+            <div class="planner-title">
+
+                QUIZ GENERATOR
+
+            </div>
+
+
+            <div class="planner-line"></div>
+
+
+            <p class="planner-subtitle">
+
+                KNOWLEDGE TESTING CORE
+
+            </p>
+
+
+            <label>
+
+                ENTER QUIZ TOPIC
+
+            </label>
+
+
+            <textarea
+                id="quizInput"
+                placeholder="Example: Java OOP, Data Structures, Physics, Mathematics..."
+            ></textarea>
+
+
+            <button
+                class="planner-generate"
+                onclick="generateQuiz()"
+            >
+
+                ⚡ GENERATE AI QUIZ
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         INTERACTIVE QUIZ GAME
+    ====================================================== -->
+
+    <div
+        id="quizGameModal"
+        class="quiz-game-modal"
+    >
+
+        <div
+            id="quizGameContent"
+            class="quiz-game-content"
+        >
+
+            <!-- JavaScript will insert the quiz here -->
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         AI TUTOR MODAL
+    ====================================================== -->
+
+    <div
+        id="tutorModal"
+        class="planner-modal"
+    >
+
+        <div class="planner-modal-content">
+
+
+            <button
+                class="planner-close"
+                onclick="closeTutor()"
+            >
+
+                ×
+
+            </button>
+
+
+            <div class="planner-icon">
+
+                📚
+
+            </div>
+
+
+            <div class="planner-title">
+
+                AI TUTOR
+
+            </div>
+
+
+            <div class="planner-line"></div>
+
+
+            <p class="planner-subtitle">
+
+                PERSONAL LEARNING CORE
+
+            </p>
+
+
+            <label>
+
+                WHAT DO YOU WANT TO LEARN?
+
+            </label>
+
+
+            <textarea
+                id="tutorInput"
+                placeholder="Example: Explain Java inheritance to me like I'm a beginner..."
+            ></textarea>
+
+
+            <button
+                class="planner-generate"
+                onclick="startTutor()"
+            >
+
+                🚀 START AI TUTOR
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
 
 </body>
+
 </html>
