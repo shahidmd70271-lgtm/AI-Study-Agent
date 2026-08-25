@@ -46,7 +46,7 @@ async function askAI() {
 
     userMessage.innerHTML = `
         <div class="message-label">
-            👤 SHAHID
+            You
         </div>
         ${escapeHTML(question)}
     `;
@@ -68,11 +68,11 @@ async function askAI() {
 
     loading.innerHTML = `
         <div class="message-label">
-            🤖 AI CORE
+            Study Assistant
         </div>
 
         <span class="thinking-text">
-            INITIALIZING AI CORE
+            Thinking
         </span>
 
         <span class="thinking-dots">
@@ -95,11 +95,11 @@ async function askAI() {
         loading.querySelector(".thinking-text");
 
     const thinkingMessages = [
-        "INITIALIZING AI CORE",
-        "ANALYZING QUESTION",
-        "PROCESSING KNOWLEDGE",
-        "GENERATING RESPONSE",
-        "FINALIZING ANSWER"
+        "Thinking",
+        "Reading your question",
+        "Finding the key points",
+        "Writing a clear answer",
+        "Almost ready"
     ];
 
     let thinkingIndex = 0;
@@ -153,7 +153,7 @@ async function askAI() {
 
         loading.innerHTML = `
             <div class="message-label">
-                🤖 AI STUDY AGENT
+                Study Assistant
             </div>
 
             <div class="ai-response"></div>
@@ -177,10 +177,10 @@ async function askAI() {
 
         loading.innerHTML = `
             <div class="message-label">
-                🤖 AI CORE
+                Study Assistant
             </div>
 
-            ❌ Something went wrong.
+            Something went wrong.
             <br><br>
             Please try again.
         `;
@@ -449,15 +449,15 @@ function showQuizLoading() {
         <div class="quiz-loading">
 
             <div class="quiz-ai-core">
-                🤖
+                Quiz
             </div>
 
             <h2>
-                AI QUIZ CORE
+                Quiz Builder
             </h2>
 
             <p class="quiz-loading-text">
-                GENERATING QUESTIONS
+                Creating questions
             </p>
 
             <div class="quiz-loading-bar">
@@ -513,7 +513,7 @@ function showQuizScreen() {
             <div>
 
                 <div class="quiz-small-title">
-                    🤖 AI STUDY AGENT
+                    Study Practice
                 </div>
 
                 <h2>
@@ -755,22 +755,22 @@ function showQuizResult() {
     if (quizScore === 5) {
 
         message =
-            "PERFECT SCORE! 🏆";
+            "PERFECT SCORE!";
 
     } else if (quizScore >= 4) {
 
         message =
-            "EXCELLENT WORK! 🔥";
+            "EXCELLENT WORK!";
 
     } else if (quizScore >= 3) {
 
         message =
-            "GOOD JOB! 👍";
+            "GOOD JOB!";
 
     } else {
 
         message =
-            "KEEP PRACTICING! 💪";
+            "KEEP PRACTICING!";
 
     }
 
@@ -784,7 +784,7 @@ function showQuizResult() {
         <div class="quiz-result">
 
             <div class="result-icon">
-                🏆
+                ✓
             </div>
 
             <div class="quiz-small-title">
@@ -926,7 +926,7 @@ function showQuizError(message) {
         <div class="quiz-result">
 
             <div class="result-icon">
-                ⚠️
+                !
             </div>
 
             <h2>
@@ -1048,7 +1048,7 @@ function sleep(milliseconds) {
 window.addEventListener("load", () => {
 
     console.log(
-        "🤖 SHAHID'S AI STUDY AGENT ONLINE"
+        "Shahid's Study Assistant ready"
     );
 
 });
